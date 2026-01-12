@@ -8,6 +8,7 @@ day2text = ""
 # Set this to days in the month
 days_in_month = 31
 month = "01"
+year = "2026"
 
 for x in range(0,days_in_month - 1):
     if day1 < 10:
@@ -18,6 +19,6 @@ for x in range(0,days_in_month - 1):
         day2text = "0" + str(day2)
     else:
         day2text = str(day2)
-    print(f"2026-{month}-{day1text} 05:00:00;2026-{month}-{day2text} 13:00:00")
+    print(f"{year}-{month}-{day1text} 05:00:00;{year}-{month}-{day2text} 13:00:00")
     day1 += 1
     day2 += 1
