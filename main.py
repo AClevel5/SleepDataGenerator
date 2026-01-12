@@ -1,16 +1,18 @@
 # Sleep Format 2026-1-01 020:51:00;2026-1-02 07:51:00
 # This imports in UTC so to get to MTN we have to shift times 7 hours forward therefore day 1 and 2 start on the subsequent days
 # 5:00 UTC is really 22:00 MTN and 13:00 UTC is really 06:00
-day1 = 2
-day2 = 3
+day1 = int(input("What day to start generating? 1, 2, 3 etc."))
+month = int(input("What month would you like? 1, 2, 3"))
+year = int(input("What year would you like? 1, 2, 3"))
+day2 = day1 + 1
 day1text = ""
 day2text = ""
 # Set this to days in the month
-days_in_month = 31
-month = "01"
-year = "2026"
+days_per_month = (31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
+days_in_month = days_per_month[month - 1]
 
-for x in range(0,days_in_month - 1):
+
+for x in range(0,days_in_month - day1):
     if day1 < 10:
         day1text = "0" + str(day1)
     else:
